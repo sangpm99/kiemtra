@@ -108,8 +108,7 @@ h2{
 .contact-content{
     margin: 0 20px 20px 20px;
     padding: 20px;
-    border: 1px solid red;
-    min-height: 550px;
+    min-height: 496px;
 }
 .contact-filter{
     background-color: #fff;
@@ -117,7 +116,7 @@ h2{
     float:left;
     padding-right: 5%;
     padding: 20px;
-    min-height: 65vh;
+    min-height: 40vh;
 }
 .contact-filter p{
     font-weight: bold;
@@ -147,7 +146,7 @@ h2{
     color: #fff;
     font-size: 1.5rem;
     font-weight: bold;
-    line-height: 126px;
+    line-height: 100px;
 }
 .contact-table{
     background-color: #fff;
@@ -168,4 +167,99 @@ h2{
 }
 .text-left{
     text-align: left;
+}
+
+
+
+/* CSS for admin index */
+.pd{
+    padding:50px;
+}
+.pd p{
+    margin-top: 20px;
+    color: #198754;
+    font-weight: bold;
+}
+.view{
+    margin: auto 100px;
+    padding: 20px;
+    min-height: 428px;
+}
+.view>div{
+    width: 400px;
+    height: 200px;
+    display: inline-block;
+    margin: 0 130px 0 100px;
+    background-color: #fff;
+    position: relative;
+}
+.view-mini{
+    position: absolute;
+    top: 30%;
+    left:30%;
+    width: 160px;
+}
+.view-mini p{
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;}
+
+
+/* CSS for manage-admin */
+.manage-admin-content{
+    min-height: 605px;
+}
+.manage-admin-content h1{
+    padding-bottom: 20px;
+}
+.manage-admin-content button{
+    background-color: #198754;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.manage-admin-content button:hover{
+    opacity: 0.5;
+}
+
+/* CSS for manage-contact */
+.manage-contact{
+    min-height: 380px;
+}
+.manage-contact button{
+    padding: 5px;
+    margin: 5px;
+}
+.contact-action div{
+    display: inline-block;
+    padding:5px;
+    margin: 5px;
+}
+.contact-action div a{
+    color: #fff;
+}
+.contact-action-1{
+    background-color: #198754;
+}
+.contact-action-1:hover{
+    opacity: 0.5;
+}
+.contact-action-2{
+    background-color: #dc3545;
+}
+.contact-action-2:hover{
+    opacity: 0.5;
+}
+.contact-action-3 {
+    width:180px;
+    background-color: #198754;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.contact-action-3 a{
+    text-align: center;
+    color: #fff;
+}
+.contact-action-3:hover{
+    opacity: 0.5;
 }

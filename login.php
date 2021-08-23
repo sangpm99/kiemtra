@@ -1,3 +1,22 @@
+<?php
+    $conn = mysqli_connect('localhost','root','','db_contact');
+    if(isset($_POST['txt-user'])){
+        $User = $_POST['txt-user'];
+        $Password = $_POST['txt-password'];
+
+        $sql = "SELECT * FROM tbl_admin WHERE user='$User' AND password = '$Password' limit 1";
+
+        $result=mysqli_query($conn,$sql);
+
+        if(mysqli_num_rows($result)==1){
+            header("location:admin/index.php");
+        }
+        else{
+            echo '<script>alert("Thông tin tài khoản mật khẩu không chính xác");</script>';
+        }
+    }
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,18 +35,19 @@
             <div class="card-body p-5 text-center">
 
                 <h3 class="mb-5">Đăng nhập</h3>
+                <form method="POST" action="#">
+                    <div class="form-outline mb-4">
+                    <input type="text" id="typeTextX" name="txt-user" class="form-control form-control-lg" placeholder="Tài khoản"/>
+                    </div>
 
-                <div class="form-outline mb-4">
-                <input type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="Tài khoản"/>
-                </div>
+                    <div class="form-outline mb-4">
+                    <input type="password" id="typePasswordX" name="txt-password" class="form-control form-control-lg" placeholder="Mật khẩu"/>
+                    </div>
 
-                <div class="form-outline mb-4">
-                <input type="password" id="typePasswordX" class="form-control form-control-lg" placeholder="Mật khẩu"/>
-                </div>
+                    <button class="btn btn-primary btn-lg btn-block" name="btn-sbm" type="submit">Login</button>
 
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-
-                <hr class="my-4">
+                    <hr class="my-4">
+                </form>
             </div>
             </div>
         </div>

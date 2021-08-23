@@ -11,14 +11,13 @@
             <p>Bộ lọc tìm kiếm</p>
             <ul class="filter">
                 <li><a href="#">CÁN BỘ</a></li>
-                <li><a href="#">CƠ QUAN</a></li>
                 <li><a href="#">CHỨC VỤ</a></li>
+                <li><a href="#">ĐƠN VỊ</a></li>
             </ul>
         </div>
         <div class="contact-table">
             <table class="table">
                 <thead>
-                    <th class="table-STT">STT</th>
                     <th>Tên</th>
                     <th>Chức vụ</th>
                     <th>Email</th>
@@ -26,14 +25,33 @@
                     <th>Đơn vị</th>
                 </thead>
                 <tbody>
+                    <?php
+                        // Truy vấn CSDL vào PHP
+                        //Kết nối
+                        $conn = mysqli_connect('localhost','root','','db_contact','3306');
+                        if(!$conn){
+                            die("Không thể kết nối");
+                        }
+                        // Định nghĩa và thực hiện truy vấn
+                        $sql = "SELECT * FROM tbl_cadres";
+                        $result = mysqli_query($conn,$sql);
+                        if(mysqli_num_rows($result)>0){
+                            //Lặp để lấy từng bản ghi thông qua phương thức : mysqli_fetch_assoc
+                            while($row = mysqli_fetch_assoc($result))
+                            {
+                    ?>
                     <tr>
-                        <td class="table-STT">1</td>
-                        <td class="text-left">Nguyễn Thanh Tùng</td>
-                        <td>Trưởng Khoa</td>
-                        <td>nttung@wru.edu.vn</td>
-                        <td>0985824682</td>
-                        <td>P201</td>
+                        <td class="text-left"><?php echo $row['name']?></td>
+                        <td><?php echo $row['position']?></td>
+                        <td><?php echo $row['email']?></td>
+                        <td><?php echo $row['phone_num']?></td>
+                        <td><?php echo $row['id_unit']?></td>
                     </tr>
+                    <?php
+                            }
+                        }
+                        mysqli_close($conn);
+                    ?>
                 </tbody>
             </table>
         </div>
